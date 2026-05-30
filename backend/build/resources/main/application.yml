@@ -1,0 +1,28 @@
+server:
+  port: ${PORT:3000}
+
+spring:
+  application:
+    name: sister-control-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://${PGHOST:localhost}:${PGPORT:5432}/${PGDATABASE:sistercontrol}}
+    username: ${PGUSER:sistercontrol}
+    password: ${PGPASSWORD:sistercontrol}
+  flyway:
+    enabled: true
+
+sister-control:
+  security:
+    session-ttl-days: ${SESSION_TTL_DAYS:7}
+    pair-code-ttl-minutes: ${PAIR_CODE_TTL_MIN:10}
+  ollama:
+    base-url: http://${OLLAMA_HOST:localhost}:${OLLAMA_PORT:11434}
+    model: ${OLLAMA_MODEL:gemma2:2b}
+  detector:
+    base-url: http://${DETECTOR_HOST:localhost}:${DETECTOR_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

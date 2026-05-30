@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Настройки"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btnBlur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сервис блюринга"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:id="@+id/btnBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сервис блокинга сайтов"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btnEnableTimeGuard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сервис контроля экранного времени"
+        android:layout_marginTop="12dp" />
+
+    <!-- Выйти -->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Выйти из аккаунта"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:id="@+id/btnDeleteAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Удалить учётную запись"
+        android:layout_marginTop="12dp" />
+
+
+</LinearLayout>

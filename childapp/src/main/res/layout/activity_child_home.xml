@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topLimit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67" />
+
+    <ImageView
+        android:id="@+id/bg_pink"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_pink"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/bg_violet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_violet"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLimit" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- 3 зоны: левая | центр(персонаж) | правая -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glCenterStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.40" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glCenterEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.60" />
+
+        <!-- Шестерёнка -->
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Настройки"
+            android:src="@drawable/baseline_settings_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvChildHello"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:text="Привет!"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/btnSettings"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvParentEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Родитель: —"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvChildHello" />
+
+        <ImageView
+            android:id="@+id/ivMascot"
+            android:layout_width="234dp"
+            android:layout_height="732dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sister_main"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/glCenterEnd"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="@id/glCenterStart"
+            app:layout_constraintTop_toBottomOf="@id/tvParentEmail"
+            app:layout_constraintVertical_bias="0.441" />
+
+        <ImageView
+            android:id="@+id/ivMascotSettings"
+            android:layout_width="275dp"
+            android:layout_height="552dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sister_main_settings"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/glCenterEnd"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="@id/glCenterStart"
+            app:layout_constraintTop_toBottomOf="@id/tvParentEmail"
+            app:layout_constraintVertical_bias="0.599" />
+
+        <LinearLayout
+            android:id="@+id/colLeft"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/glCenterStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvParentEmail">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpenScreenTimeMenu"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:elevation="8dp"
+                android:text="Экранное время"
+                android:textColor="@color/pink_border"
+                app:backgroundTint="@android:color/white"
+                app:strokeColor="@color/pink_border"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpenAssistant"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:elevation="8dp"
+                android:text="AI-помощник"
+                android:textColor="@color/pink_border"
+                app:backgroundTint="@android:color/white"
+                app:strokeColor="@color/pink_border"
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/colRight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/glCenterEnd"
+            app:layout_constraintTop_toBottomOf="@id/tvParentEmail">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTrustLetter"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:elevation="8dp"
+                android:text="Письмо доверия"
+                android:textColor="@color/pink_border"
+                app:backgroundTint="@android:color/white"
+                app:strokeColor="@color/pink_border"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnParentMessages"
+                android:layout_width="match_parent"
+                android:layout_height="71dp"
+                android:layout_marginTop="12dp"
+                android:elevation="8dp"
+                android:text="Сообщения от родителя"
+                android:textColor="@color/pink_border"
+                app:backgroundTint="@android:color/white"
+                app:strokeColor="@color/pink_border"
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
+
+        <!-- Точка, куда "прилетает" шестерёнка -->
+        <View
+            android:id="@+id/settingsTarget"
+            android:layout_width="21dp"
+            android:layout_height="34dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.847"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.399" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

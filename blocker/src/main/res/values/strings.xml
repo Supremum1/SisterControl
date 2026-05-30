@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Self Site Blocker</string>
+
+    <string name="app_description">
+        Родители позаботились о тебе.
+        Приложение использует сервис доступности для мониторинга особо опасных сайтов.
+    </string>
+
+    <string name="switch_enable_blocking">Включить блокировку сайтов</string>
+    <string name="button_open_accessibility">Открыть настройки доступности</string>
+    <string name="status_blocking_enabled">Блокировка включена. Сервис доступности активен.</string>
+    <string name="status_blocking_disabled">Блокировка выключена или сервис доступности не активен.</string>
+
+    <string name="accessibility_service_description">
+        Отслеживает работу веб-браузеров и блокирует сайты, указанные в локальном файле списка блокировок.
+    </string>
+
+    <string name="blocked_title">Сайт заблокирован!</string>
+    <string name="blocked_message">
+        Родители позаботились о тебе.
+        Этот сайт заблокирован Site Blocker.
+        Ты можешь закрыть эту страницу и продолжить пользоваться устройством. Будь осторожен в Интернете!
+    </string>
+    <string name="button_back_to_browser">Закрыть этот экран</string>
+</resources>

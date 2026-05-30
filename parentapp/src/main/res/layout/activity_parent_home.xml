@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topLimit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.69" />
+
+
+    <ImageView
+        android:id="@+id/bg_pink"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_pink"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/bg_violet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_violet"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLimit" />
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- 3 зоны: левая | центр(персонаж) | правая -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glCenterStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glCenterEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.57" />
+
+        <ImageButton
+            android:id="@+id/btnParentSettings"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Настройки"
+            android:src="@drawable/baseline_settings_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvParentHello"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:text="Привет!"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/btnParentSettings"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvConnectedChild"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ребёнок: —"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvParentHello" />
+
+        <!-- Персонаж строго в центральной зоне -->
+        <ImageView
+            android:id="@+id/ivMascot"
+            android:layout_width="298dp"
+            android:layout_height="498dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sister_main"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="3:5"
+            app:layout_constraintEnd_toEndOf="@id/glCenterEnd"
+            app:layout_constraintStart_toStartOf="@id/glCenterStart"
+            app:layout_constraintTop_toBottomOf="@id/tvConnectedChild"
+            app:layout_constraintVertical_bias="0.95" />
+
+        <ImageView
+            android:id="@+id/ivMascotSettings"
+            android:layout_width="345dp"
+            android:layout_height="511dp"
+
+            android:scaleType="fitCenter"
+            android:src="@drawable/sister_main_settings"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="3:5"
+            app:layout_constraintEnd_toEndOf="@id/glCenterEnd"
+            app:layout_constraintStart_toStartOf="@id/glCenterStart"
+            app:layout_constraintTop_toBottomOf="@id/tvConnectedChild"
+            app:layout_constraintVertical_bias="0.95" />
+
+        <!-- Левая колонка: занимает всю левую зону -->
+        <LinearLayout
+            android:id="@+id/colLeft"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/glCenterStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvConnectedChild">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMessages"
+                android:layout_width="123dp"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:text="Сообщения"
+                android:textColor="@color/pink_border"
+                app:backgroundTint="@android:color/white"
+                app:strokeColor="@color/pink_border"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnControl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:elevation="8dp"
+                android:text="События ребенка"
+                android:textColor="@color/pink_border"
+                app:backgroundTint="@android:color/white"
+                app:strokeColor="@color/pink_border"
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
+
+        <!-- Правая колонка: занимает всю правую зону -->
+        <LinearLayout
+            android:id="@+id/colRight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/glCenterEnd"
+            app:layout_constraintTop_toBottomOf="@id/tvConnectedChild">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:text="Где мой ребенок?"
+                android:textColor="@color/pink_border"
+                app:backgroundTint="@android:color/white"
+                app:strokeColor="@color/pink_border"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScreenTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:elevation="8dp"
+                android:text="Экранное время"
+                android:textColor="@color/pink_border"
+                app:backgroundTint="@android:color/white"
+                app:strokeColor="@color/pink_border"
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/settingsTarget"
+            android:layout_width="21dp"
+            android:layout_height="34dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.827"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.439" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">timeguard</string>
+    <string name="time_guard_desc">Контроль экранного времени и лимитов приложений</string>
+
+</resources>
